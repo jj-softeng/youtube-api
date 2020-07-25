@@ -1,0 +1,417 @@
+{
+	"variables": [],
+	"info": {
+		"name": "youtube-clone",
+		"_postman_id": "b9eab481-0933-fc90-8ed8-17e0fa2881eb",
+		"description": "Youtube API access points.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "[POST] comments",
+			"request": {
+				"url": "{{baseURL}}/comments",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"postedBy\": \"27079a2a-6522-4df6-8ca7-059b5e4425f5\",\n    \"videoId\": \"27079a2a-6522-4df6-8ca7-059b5e4425f5\",\n    \"responseTo\": 12,\n    \"body\": \"Awesome video\"\n}"
+				},
+				"description": "add or create a new comment in postgresql database"
+			},
+			"response": []
+		},
+		{
+			"name": "[GET] comments",
+			"request": {
+				"url": "{{baseURL}}/comments/b2f7ce7a-125e-4116-877a-64d2e0ae16fe",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "get all the available comments from database"
+			},
+			"response": []
+		},
+		{
+			"name": "[POST] categories",
+			"request": {
+				"url": "{{baseURL}}/categories",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"hello World\"\n}"
+				},
+				"description": "add or create a new category in database."
+			},
+			"response": []
+		},
+		{
+			"name": "[GET] categories",
+			"request": {
+				"url": "{{baseURL}}/categories",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "get all categories from database."
+			},
+			"response": []
+		},
+		{
+			"name": "[POST] signup",
+			"request": {
+				"url": "{{baseURL}}/signup",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"firstName\": \"asim\",\n\t\"lastName\": \"ali\",\n\t\"username\": \"abc123\",\n\t\"email\": \"test@user.com\",\n\t\"password\": \"abc123\"\n}"
+				},
+				"description": "create or add a new user in database"
+			},
+			"response": []
+		},
+		{
+			"name": "[GET] dislikes",
+			"request": {
+				"url": "{{baseURL}}/dislikes/8f2fa2b6-b362-4fbb-85e9-5968f23a58be",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "get all the dislikes from databse based on video id."
+			},
+			"response": []
+		},
+		{
+			"name": "[POST] dislikes",
+			"request": {
+				"url": "{{baseURL}}/dislikes",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\": \"abc123\",\n\t\"videoId\": \"8f2fa2b6-b362-4fbb-85e9-5968f23a58be\"\n}"
+				},
+				"description": "create a new dislike in database."
+			},
+			"response": []
+		},
+		{
+			"name": "[GET] Likes",
+			"request": {
+				"url": "{{baseURL}}/likes/8f2fa2b6-b362-4fbb-85e9-5968f23a58be",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "get all likes from database based on video id."
+			},
+			"response": []
+		},
+		{
+			"name": "[POST] Likes",
+			"request": {
+				"url": "{{baseURL}}/likes",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\": \"abc123\",\n\t\"videoId\": \"8f2fa2b6-b362-4fbb-85e9-5968f23a58be\"\n}"
+				},
+				"description": "add or create new like in database."
+			},
+			"response": []
+		},
+		{
+			"name": "[POST] Login",
+			"request": {
+				"url": "{{baseURL}}/login",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"test@user.com\",\n\t\"password\": \"abc123\"\n}"
+				},
+				"description": "authenicate user."
+			},
+			"response": []
+		},
+		{
+			"name": "[POST] video",
+			"request": {
+				"url": "{{baseURL}}/videos",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImJmNjdlYzQ0LWY4OTMtNDc0NC04YmYyLWYyZjUxM2MyYjcwZCIsImZpcnN0TmFtZSI6ImFzaW0iLCJsYXN0TmFtZSI6ImFsaSIsInVzZXJuYW1lIjoiYWJjMTIzIiwiZW1haWwiOiJ0ZXN0QHVzZXIuY29tIiwicHJvZmlsZVBpYyI6bnVsbCwiY3JlYXRlZEF0IjoiMjAyMC0wNy0yMlQxMDoxNToxMC4xMTFaIiwidXBkYXRlZEF0IjoiMjAyMC0wNy0yMlQxMDoxNToxMC4xMTFaIiwiaWF0IjoxNTk1NTg3MjgxfQ.ze4WAJy26RsY8OBcEjl8qRuWp-osSKDO3h9rC3yBJKY",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"value": "",
+							"description": "",
+							"type": "file"
+						},
+						{
+							"key": "title",
+							"value": "DLD presentation",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "this is a video only file of dld presentation",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "privacy",
+							"value": "1",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "category",
+							"value": "92372cb6-5c03-4efc-9f1d-37f764279e93",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": "create a new video in database. process(convert to mp4) and automatic thumbnails generation all in one go."
+			},
+			"response": []
+		},
+		{
+			"name": "[POST] subscribe",
+			"request": {
+				"url": "{{baseURL}}/subscribe",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"userTo\": \"bf67ec44-f893-4744-8bf2-f2f513c2b70d\",\n\t\"userFrom\": \"bf67ec44-f893-4744-8bf2-f2f513c2b70d\"\n}"
+				},
+				"description": "create a new subscriber in database."
+			},
+			"response": []
+		},
+		{
+			"name": "[GET] subscribers",
+			"request": {
+				"url": "{{baseURL}}/subscribe/bf67ec44-f893-4744-8bf2-f2f513c2b70d",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "get all the subscribers from database based on the user which is subscribed."
+			},
+			"response": []
+		},
+		{
+			"name": "[GET] category",
+			"request": {
+				"url": "{{baseURL}}/categories/92372cb6-5c03-4efc-9f1d-37f764279e93",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "get a category from database based on id."
+			},
+			"response": []
+		},
+		{
+			"name": "[GET] videos",
+			"request": {
+				"url": "{{baseURL}}/videos",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "get all videos from database."
+			},
+			"response": []
+		},
+		{
+			"name": "[GET] Video",
+			"request": {
+				"url": "{{baseURL}}/video/9902b543-0de1-40a4-8102-861f27b125dd",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "get video from the database based on video id."
+			},
+			"response": []
+		},
+		{
+			"name": "[GET] Thumbnails",
+			"request": {
+				"url": "{{baseURL}}/thumbnails",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "get all the thumbnails from database."
+			},
+			"response": []
+		},
+		{
+			"name": "[GET] Thumbnail",
+			"request": {
+				"url": "{{baseURL}}/thumbnail/f780d26e-308d-4144-8e95-e8ad8db15df2",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "get thumbnail from database based on video id."
+			},
+			"response": []
+		},
+		{
+			"name": "[PUT] thumbnail",
+			"request": {
+				"url": "{{baseURL}}/thumbnail/9902b543-0de1-40a4-8102-861f27b125dd",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"selected\": \"3\"\n}"
+				},
+				"description": "update selected thumbnail from database."
+			},
+			"response": []
+		},
+		{
+			"name": "[PUT] video",
+			"request": {
+				"url": "{{baseURL}}/video/9902b543-0de1-40a4-8102-861f27b125dd",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImJmNjdlYzQ0LWY4OTMtNDc0NC04YmYyLWYyZjUxM2MyYjcwZCIsImZpcnN0TmFtZSI6ImFzaW0iLCJsYXN0TmFtZSI6ImFsaSIsInVzZXJuYW1lIjoiYWJjMTIzIiwiZW1haWwiOiJ0ZXN0QHVzZXIuY29tIiwicHJvZmlsZVBpYyI6bnVsbCwiY3JlYXRlZEF0IjoiMjAyMC0wNy0yMlQxMDoxNToxMC4xMTFaIiwidXBkYXRlZEF0IjoiMjAyMC0wNy0yMlQxMDoxNToxMC4xMTFaIiwiaWF0IjoxNTk1NTg3MjgxfQ.ze4WAJy26RsY8OBcEjl8qRuWp-osSKDO3h9rC3yBJKY",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"title\": \"Google\",\n\t\"description\": \"the largest serch engine\",\n\t\"privacy\": \"0\",\n\t\"category\": \"92372cb6-5c03-4efc-9f1d-37f764279e93\"\n}"
+				},
+				"description": "update video data from database."
+			},
+			"response": []
+		},
+		{
+			"name": "[DELETE] subscribers",
+			"request": {
+				"url": "{{baseURL}}/subscribe",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"userTo\": \"bf67ec44-f893-4744-8bf2-f2f513c2b70d\",\n\t\"userFrom\": \"bf67ec44-f893-4744-8bf2-f2f513c2b70d\"\n}"
+				},
+				"description": "delete subscription."
+			},
+			"response": []
+		},
+		{
+			"name": "[DELETE] Like",
+			"request": {
+				"url": "{{baseURL}}/likes",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"videoId\": \"8f2fa2b6-b362-4fbb-85e9-5968f23a58be\",\n\t\"commentId\": null\n}"
+				},
+				"description": "delete like record from database."
+			},
+			"response": []
+		},
+		{
+			"name": "[DELETE] Dislike",
+			"request": {
+				"url": "{{baseURL}}/dislikes",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"videoId\": \"8f2fa2b6-b362-4fbb-85e9-5968f23a58be\",\n\t\"commentId\": null\n}"
+				},
+				"description": "delete dislike record from database."
+			},
+			"response": []
+		}
+	]
+}
