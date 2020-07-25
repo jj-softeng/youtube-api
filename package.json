@@ -1,0 +1,29 @@
+{
+  "name": "youtube-api",
+  "version": "1.0.0",
+  "description": "Node.js API for building Youtube clone.",
+  "main": "main.js",
+  "scripts": {
+    "dev": "nodemon -e js,json --exec node main.js",
+    "start": "node main.js"
+  },
+  "author": "Junaid Javed",
+  "license": "MIT",
+  "dependencies": {
+    "cli-progress": "^3.8.2",
+    "compression": "^1.7.4",
+    "express": "^4.17.1",
+    "fluent-ffmpeg": "^2.1.2",
+    "helmet": "^3.23.3",
+    "joi": "^17.1.1",
+    "jsonwebtoken": "^8.5.1",
+    "multer": "^1.4.2",
+    "pg": "^8.3.0",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^6.3.3",
+    "uuid": "^8.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
